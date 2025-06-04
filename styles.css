@@ -23,42 +23,63 @@ body {
 	 z-index: -1;
  }
 
-@keyframes isotopeFloat {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-4px); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes atomicGradient {
+@keyframes particleMotion {
   0% {
-    background-position: 0% 50%;
+    transform: translate(0, 0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(30px, -30px) scale(1.2);
+    opacity: 0.3;
   }
   100% {
-    background-position: 100% 50%;
+    transform: translate(-20px, 20px) scale(1);
+    opacity: 0.8;
   }
+}
+
+@keyframes isotopeFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
 }
 
 @keyframes radiationPulse {
   0%, 100% {
-    box-shadow: 0 0 12px #39ff14, 0 0 24px #39ff14, 0 0 36px #39ff14;
+    box-shadow: 0 0 12px #39ff14, 0 0 24px #39ff14;
   }
   50% {
-    box-shadow: 0 0 18px #ffd700, 0 0 36px #ffd700, 0 0 54px #ffd700;
+    box-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700;
   }
 }
 
 header {
-  background: linear-gradient(270deg, #39ff14, #ffd700, #39ff14);
-  background-size: 500% 500%;
-  color: #000;
-  font-family: 'Orbitron', sans-serif; /* futuristic touch */
+  position: relative;
+  background-color: #000; /* Dark space-like backdrop */
+  color: #39ff14;
+  font-family: 'Orbitron', sans-serif;
   font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
-
-
+  padding: 40px 0;
+  z-index: 1;
+  animation:
+    isotopeFloat 4s ease-in-out infinite,
+    radiationPulse 2.5s ease-in-out infinite;
+  overflow: hidden;
+  text-shadow: 0 0 10px #39ff14;
+  border-bottom: 2px solid #39ff1440;
 }
 
+/* Particle styling */
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ffd700;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: particleMotion 6s infinite ease-in-out;
+}
 
 
 header h1 {
