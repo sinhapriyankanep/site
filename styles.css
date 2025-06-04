@@ -25,7 +25,7 @@ body {
 
 @keyframes floatHeader {
   0%   { transform: translateY(0); }
-  50%  { transform: translateY(-5px); }
+  50%  { transform: translateY(-6px); }
   100% { transform: translateY(0); }
 }
 
@@ -38,10 +38,24 @@ body {
   }
 }
 
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px #00ffffaa, 0 0 20px #00ffff88, 0 0 30px #00ffff55;
+  }
+  50% {
+    box-shadow: 0 0 20px #ff00ffcc, 0 0 40px #ff00ff99, 0 0 60px #ff00ff66;
+  }
+  100% {
+    box-shadow: 0 0 10px #00ffffaa, 0 0 20px #00ffff88, 0 0 30px #00ffff55;
+  }
+}
+
 header {
-  background: linear-gradient(270deg, #518DDA, #396DAF, #518DDA);
-  background-size: 600% 600%;
+  background: linear-gradient(270deg, #00ffff, #ff00ff, #00ffff);
+  background-size: 400% 400%;
   color: white;
+  font-size: 2rem;
+  font-weight: bold;
   padding: 20px 0;
   text-align: center;
   z-index: 1;
@@ -50,8 +64,10 @@ header {
 
   animation:
     floatHeader 4s ease-in-out infinite,
-    shimmerBackground 10s linear infinite;
+    shimmerBackground 10s linear infinite,
+    pulseGlow 3s ease-in-out infinite;
 }
+
 
 
 
