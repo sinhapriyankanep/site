@@ -23,64 +23,48 @@ body {
 	 z-index: -1;
  }
 
-@keyframes particleMotion {
+@keyframes streamflow {
   0% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: translate(30px, -30px) scale(1.2);
-    opacity: 0.3;
+    background-position: 0% 50%;
   }
   100% {
-    transform: translate(-20px, 20px) scale(1);
-    opacity: 0.8;
-  }
-}
-
-@keyframes isotopeFloat {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-4px); }
-}
-
-@keyframes radiationPulse {
-  0%, 100% {
-    box-shadow: 0 0 12px #39ff14, 0 0 24px #39ff14;
-  }
-  50% {
-    box-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700;
+    background-position: 100% 50%;
   }
 }
 
 header {
   position: relative;
-  background-color: #000; /* Dark space-like backdrop */
-  color: #39ff14;
-  font-family: 'Orbitron', sans-serif;
+  overflow: hidden;
+  background-color: #f3f4f6; /* neutral base */
+  color: #1a1a1a;
+  font-family: 'Helvetica Neue', sans-serif;
   font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
-  padding: 40px 0;
+  padding: 60px 0;
   z-index: 1;
-  animation:
-    isotopeFloat 4s ease-in-out infinite,
-    radiationPulse 2.5s ease-in-out infinite;
-  overflow: hidden;
-  text-shadow: 0 0 10px #39ff14;
-  border-bottom: 2px solid #39ff1440;
+  border-bottom: 1px solid #ccc;
+  isolation: isolate;
 }
 
-/* Particle styling */
-.particle {
+header::before {
+  content: "";
   position: absolute;
-  width: 8px;
-  height: 8px;
-  background-color: #ffd700;
-  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(150, 170, 190, 0.1) 0px,
+    rgba(150, 170, 190, 0.1) 2px,
+    transparent 2px,
+    transparent 8px
+  );
+  animation: streamflow 25s linear infinite;
+  z-index: -1;
   opacity: 0.6;
-  animation: particleMotion 6s infinite ease-in-out;
 }
-
 
 header h1 {
     margin: 0;
