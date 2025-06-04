@@ -23,13 +23,13 @@ body {
 	 z-index: -1;
  }
 
-@keyframes floatHeader {
+@keyframes isotopeFloat {
   0%   { transform: translateY(0); }
-  50%  { transform: translateY(-6px); }
+  50%  { transform: translateY(-4px); }
   100% { transform: translateY(0); }
 }
 
-@keyframes shimmerBackground {
+@keyframes atomicGradient {
   0% {
     background-position: 0% 50%;
   }
@@ -38,31 +38,23 @@ body {
   }
 }
 
-@keyframes pulseGlow {
+@keyframes radiationPulse {
   0%, 100% {
-    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+    box-shadow: 0 0 12px #39ff14, 0 0 24px #39ff14, 0 0 36px #39ff14;
   }
   50% {
-    box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff;
+    box-shadow: 0 0 18px #ffd700, 0 0 36px #ffd700, 0 0 54px #ffd700;
   }
 }
 
 header {
-  background: linear-gradient(270deg, #00ffff, #ff00ff, #00ffff);
-  background-size: 400% 400%;
-  color: white;
-  font-size: 2rem;
+  background: linear-gradient(270deg, #39ff14, #ffd700, #39ff14);
+  background-size: 500% 500%;
+  color: #000;
+  font-family: 'Orbitron', sans-serif; /* futuristic touch */
+  font-size: 2.5rem;
   font-weight: bold;
-  padding: 30px 0;
   text-align: center;
-  position: relative;
-  z-index: 2;
-  animation:
-    floatHeader 4s ease-in-out infinite,
-    shimmerBackground 8s linear infinite,
-    pulseGlow 2s ease-in-out infinite;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-}
 
 
 
