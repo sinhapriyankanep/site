@@ -39,11 +39,24 @@ body {
   100% { transform: translate(240px, 0) scale(1); opacity: 0; }
 }
 
+@keyframes particlePath3 {
+  0%   { transform: translate(0, 0) scale(1); opacity: 1; }
+  50%  { transform: translate(120px, 15px) scale(1.05); opacity: 0.5; }
+  100% { transform: translate(240px, 0) scale(1); opacity: 0; }
+}
+
+@keyframes arrowFloat {
+  0% { transform: translateX(-100%); opacity: 0; }
+  10% { opacity: 0.1; }
+  50% { opacity: 0.5; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
 header {
   position: relative;
   overflow: hidden;
-  background-color: #57d5e6;
-  color: #1a1a1a;
+  background-color: #9df4fa;
+  color: #fcfcfc;
   font-family: 'Helvetica Neue', sans-serif;
   font-size: 2.5rem;
   font-weight: bold;
@@ -81,6 +94,35 @@ header::after {
   opacity: 0;
   animation: particlePath2 8s linear infinite;
   z-index: -1;
+}
+
+/* Additional particles using layered pseudo-elements */
+header::marker {
+  content: '';
+  position: absolute;
+  top: 45%;
+  left: -50px;
+  width: 8px;
+  height: 8px;
+  background-color: #64748b;
+  border-radius: 50%;
+  opacity: 0;
+  animation: particlePath3 10s linear infinite;
+  z-index: -1;
+}
+
+/* Flow arrow simulation */
+header::selection {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-image: linear-gradient(to right, transparent, rgba(0,0,0,0.2), transparent);
+  opacity: 0.2;
+  animation: arrowFloat 6s ease-in-out infinite;
+  z-index: 0;
 }
 
 
