@@ -22,15 +22,38 @@ body {
 	 background-color: rgba(255, 255, 255, 0.6);
 	 z-index: -1;
  }
-header {
-    background: linear-gradient(to right, #518DDA, #396DAF);
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    z-index: 1;
-    position: relative;
-    transition: transform 0.1s ease, background-color 0.1s ease;
+
+@keyframes floatHeader {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
 }
+
+@keyframes shimmerBackground {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+header {
+  background: linear-gradient(270deg, #518DDA, #396DAF, #518DDA);
+  background-size: 400% 400%;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  transition: transform 0.1s ease, background-color 0.1s ease;
+
+  animation:
+    floatHeader 4s ease-in-out infinite,
+    shimmerBackground 6s linear infinite;
+}
+
+
 
 header h1 {
     margin: 0;
