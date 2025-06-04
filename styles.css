@@ -25,33 +25,34 @@ body {
 
 @keyframes floatHeader {
   0%   { transform: translateY(0); }
-  50%  { transform: translateY(-4px); }
+  50%  { transform: translateY(-5px); }
   100% { transform: translateY(0); }
 }
 
 @keyframes shimmerBackground {
   0% {
-    background-position: -200% 0;
+    background-position: 0% 50%;
   }
   100% {
-    background-position: 200% 0;
+    background-position: 100% 50%;
   }
 }
 
 header {
   background: linear-gradient(270deg, #518DDA, #396DAF, #518DDA);
-  background-size: 400% 400%;
+  background-size: 600% 600%;
   color: white;
   padding: 20px 0;
   text-align: center;
   z-index: 1;
   position: relative;
-  transition: transform 0.1s ease, background-color 0.1s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 
   animation:
     floatHeader 4s ease-in-out infinite,
-    shimmerBackground 6s linear infinite;
+    shimmerBackground 10s linear infinite;
 }
+
 
 
 
