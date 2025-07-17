@@ -66,100 +66,86 @@ header {
   isolation: isolate;
 }
 
-.cat-container {
+/* Existing header styles are preserved */
+
+.cat-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 15px;
   position: relative;
+  z-index: 2;
 }
 
-.cat-head {
+.cat-face {
   position: relative;
-  width: 140px;
-  height: 140px;
-  background: linear-gradient(145deg, #fbd4d8, #f9b1c2);
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff;
   border-radius: 50%;
-  box-shadow: inset -5px -5px 10px #fce9ec, inset 5px 5px 10px #e69cab;
-  margin-bottom: 20px;
+  box-shadow: 0 0 0 3px #fcfcfc, inset -3px -3px 6px #d6f0f1, inset 3px 3px 6px #bde6e8;
 }
 
 .ear {
-  width: 40px;
-  height: 40px;
-  background: #f9b1c2;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
   position: absolute;
-  top: -20px;
+  top: -15px;
   border-radius: 50% 50% 0 0;
-  box-shadow: inset -2px -2px 5px #fce9ec, inset 2px 2px 5px #e69cab;
+  border: 2px solid #fcfcfc;
 }
 
-.ear-left {
-  left: -10px;
-  transform: rotate(-20deg);
+.left-ear {
+  left: 5px;
+  transform: rotate(-25deg);
 }
 
-.ear-right {
-  right: -10px;
-  transform: rotate(20deg);
+.right-ear {
+  right: 5px;
+  transform: rotate(25deg);
 }
 
 .eye {
-  width: 35px;
-  height: 35px;
-  background: white;
+  width: 25px;
+  height: 25px;
+  background-color: #ffffff;
   border-radius: 50%;
   position: absolute;
-  top: 45px;
-  box-shadow: inset -2px -2px 4px #ccc, inset 2px 2px 4px #fff;
+  top: 35%;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
 }
 
-.eye-left {
-  left: 25px;
+.left-eye {
+  left: 20%;
 }
 
-.eye-right {
-  right: 25px;
+.right-eye {
+  right: 20%;
 }
 
 .pupil {
-  width: 12px;
-  height: 12px;
-  background: black;
+  width: 10px;
+  height: 10px;
+  background-color: black;
   border-radius: 50%;
   position: absolute;
-  top: 12px;
-  left: 12px;
-  transition: all 0.1s ease;
+  top: 7px;
+  left: 7px;
+  transition: transform 0.1s ease;
 }
 
 .nose {
-  width: 14px;
-  height: 10px;
-  background: #d46a7c;
+  width: 10px;
+  height: 8px;
+  background: #ff8686;
+  border-radius: 50%;
   position: absolute;
-  top: 85px;
+  top: 65%;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
 }
 
-.whiskers {
-  position: absolute;
-  width: 50px;
-  height: 2px;
-  background: #444;
-  top: 90px;
-}
-
-.whiskers.left {
-  left: -50px;
-}
-
-.whiskers.right {
-  right: -50px;
-}
-
-}
 
 
 /* Particle 1 */
