@@ -11,11 +11,42 @@
         />
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
-    <header>
+	<script>
+  const leftPupil = document.querySelector('.left-pupil');
+  const rightPupil = document.querySelector('.right-pupil');
+
+  document.addEventListener('mousemove', (e) => {
+    const x = e.clientX / window.innerWidth - 0.5;
+    const y = e.clientY / window.innerHeight - 0.5;
+
+    const moveX = x * 10;
+    const moveY = y * 10;
+
+    leftPupil.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    rightPupil.style.transform = `translate(${moveX}px, ${moveY}px)`;
+  });
+</script>
+
+<body>
+<header>
+    <div class="cat-header">
+        <div class="cat">
+            <div class="ear left-ear"></div>
+            <div class="ear right-ear"></div>
+            <div class="face">
+                <div class="eye left-eye">
+                    <div class="pupil left-pupil"></div>
+                </div>
+                <div class="eye right-eye">
+                    <div class="pupil right-pupil"></div>
+                </div>
+            </div>
+        </div>
         <h1>Priyanka Sinha</h1>
-    </header>
+    </div>
+</header>
+
 
     <nav>
         <a href="#about">About Me</a>
