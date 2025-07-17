@@ -12,21 +12,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-	<script>
-  const leftPupil = document.querySelector('.left-pupil');
-  const rightPupil = document.querySelector('.right-pupil');
+<script>
+  const leftPupil = document.querySelector('.pupil-left');
+  const rightPupil = document.querySelector('.pupil-right');
 
   document.addEventListener('mousemove', (e) => {
-    const x = e.clientX / window.innerWidth - 0.5;
-    const y = e.clientY / window.innerHeight - 0.5;
+    const centerX = window.innerWidth / 2;
+    const centerY = 80; // approximate cat center height
 
-    const moveX = x * 10;
-    const moveY = y * 10;
+    const dx = e.clientX - centerX;
+    const dy = e.clientY - centerY;
 
-    leftPupil.style.transform = `translate(${moveX}px, ${moveY}px)`;
-    rightPupil.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    const angleX = Math.min(Math.max(dx / 100, -1), 1) * 8;
+    const angleY = Math.min(Math.max(dy / 100, -1), 1) * 8;
+
+    leftPupil.style.transform = `translate(${angleX}px, ${angleY}px)`;
+    rightPupil.style.transform = `translate(${angleX}px, ${angleY}px)`;
   });
 </script>
+
 
 <body>
 <header>
